@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Grocessery Watch</string>
+    <string name="my_favorites">My Favorites</string>
+    <string name="my_grocessery_watch">My Grocessery Watch</string>
+    <string name="add">add</string>
+    <string name="my_list">my list</string>
+    <string name="date_to_alert">Date To Alert</string>
+    <string name="time_for_alert">Time For Alert</string>
+    <string name="product_s_name">Product\'s name</string>
+    <string name="my_list_title">My List</string>
+    <string name="cant_find_write_here_for_yourself">Cant find? write here for yourself</string>
+    <string-array name="Options_1">
+        <item>Snacks</item>
+        <item>kif-kef</item>
+        <item>pesek-zman</item>
+        <item>mekupelet</item>
+        <item>tapuchips</item>
+        <item>bisli</item>
+    </string-array>
+    <string-array name="Options_2">
+        <item>Milk Products</item>
+        <item>Milkey</item>
+        <item>gvina-levana</item>
+        <item>cheese</item>
+        <item>leben</item>
+        <item>shoko</item>
+    </string-array>
+    <string-array name="Options_3">
+        <item>Others</item>
+        <item>soia-milk</item>
+        <item>humus</item>
+        <item>frozen-pizza</item>
+        <item>meat</item>
+        <item>wine</item>
+    </string-array>
+</resources>
