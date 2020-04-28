@@ -98,5 +98,22 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="95dp" android:layout_marginStart="95dp"
             app:layout_constraintBottom_toTopOf="@+id/editText_ProductName"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/star_off"
+            android:id="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/editText_ProductName"
+            android:layout_marginLeft="4dp" android:layout_marginStart="4dp"
+            android:contentDescription="@string/favoritestarb"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_ProductName"/>
+    <Button
+            android:layout_width="49dp"
+            android:layout_height="50dp"
+            android:id="@+id/favoriteB" app:layout_constraintEnd_toStartOf="@+id/editText_ProductName"
+            android:layout_marginEnd="4dp" android:layout_marginRight="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_ProductName"
+            android:background="@android:drawable/star_big_off"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

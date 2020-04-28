@@ -9,6 +9,7 @@
     <string name="product_s_name">Product\'s name</string>
     <string name="my_list_title">My List</string>
     <string name="cant_find_write_here_for_yourself">Cant find? write here for yourself</string>
+    <!--<string name="favoritestarb">FavoriteStarB</string>-->
     <string-array name="Options_1">
         <item>Snacks</item>
         <item>kif-kef</item>
