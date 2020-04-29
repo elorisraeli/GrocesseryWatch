@@ -6,21 +6,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.core.graphics.drawable.toDrawable
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-//    var isFavoriteBoolFirst = false
 
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var addB: Button = findViewById(R.id.addButton)
-        var myListB = findViewById<Button>(R.id.myListButton)
-        var mtFavoriteB = findViewById<Button>(R.id.myFavoritesButton)
+        val addB: Button = findViewById(R.id.addButton)
+        val myListB = findViewById<Button>(R.id.myListButton)
+        val mtFavoriteB = findViewById<Button>(R.id.myFavoritesButton)
 
 
         mtFavoriteB.setOnClickListener {
@@ -31,72 +30,35 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, MyList::class.java))
         }
 
-        var editTextProductName = findViewById<EditText>(R.id.editText_ProductName)
-        var editTextDate = findViewById<EditText>(R.id.editText_Date)
-        var editTextTime = findViewById<EditText>(R.id.editText_Time)
+        val editTextProductName = findViewById<EditText>(R.id.editText_ProductName)
+        val editTextDate = findViewById<EditText>(R.id.editText_Date)
+        val editTextTime = findViewById<EditText>(R.id.editText_Time)
 
-        val options1 = resources.getStringArray(R.array.Options_1)
-        val options2 = resources.getStringArray(R.array.Options_2)
-        val options3 = resources.getStringArray(R.array.Options_3)
+        val arrayStrings = arrayOf(
+            resources.getStringArray(R.array.Options_1),
+            resources.getStringArray(R.array.Options_2),
+            resources.getStringArray(R.array.Options_3)
+        )
+        val arraySpinners = arrayOf(spinner1, spinner2, spinner3)
 
+        for ((index, spinner) in arraySpinners.withIndex()) {
+            spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayStrings[index])
+            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, positionInArray: Int, p3: Long) {
+                    if (positionInArray != 0) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Selected Item: " + (arrayStrings[index])[positionInArray].toString(), Toast.LENGTH_SHORT
+                        ).show()
+                        editTextProductName.setText((arrayStrings[index])[positionInArray].toString())
+                    }
+                }
 
-        val spinner1 = findViewById<Spinner>(R.id.spinner)
-        spinner1.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options1)
-        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, positionInArray: Int, p3: Long) {
-                if (positionInArray != 0) {
-                    Toast.makeText(
-                        this@MainActivity,
-                        "Selected Item: " + options1[positionInArray], Toast.LENGTH_SHORT
-                    ).show()
-                    editTextProductName.setText(options1[positionInArray])
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+                    Toast.makeText(this@MainActivity, "Select Something", Toast.LENGTH_SHORT).show()
                 }
             }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                Toast.makeText(this@MainActivity, "Select Something", Toast.LENGTH_SHORT).show()
-            }
         }
-
-
-        val spinner2 = findViewById<Spinner>(R.id.spinner2)
-        spinner2.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options2)
-        spinner2.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, positionInArray: Int, p3: Long) {
-                if (positionInArray != 0) {
-                    Toast.makeText(
-                        this@MainActivity,
-                        "Selected Item: " + options2[positionInArray], Toast.LENGTH_SHORT
-                    ).show()
-                    editTextProductName.setText(options2[positionInArray])
-                }
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                Toast.makeText(this@MainActivity, "Select Something", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-
-        val spinner3 = findViewById<Spinner>(R.id.spinner3)
-        spinner3.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options3)
-        spinner3.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, positionInArray: Int, p3: Long) {
-                if (positionInArray != 0) {
-                    Toast.makeText(
-                        this@MainActivity,
-                        "Selected Item: " + options3[positionInArray], Toast.LENGTH_SHORT
-                    ).show()
-                    editTextProductName.setText(options3[positionInArray])
-                }
-            }
-
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-                Toast.makeText(this@MainActivity, "Select Something", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-
 
         addB.setOnClickListener {
             if (editTextDate.length() != 0 || editTextTime.length() != 0)
@@ -112,8 +74,25 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-//   --------------Don't Work !!! I Don't Know What To Do.--------------
 
+//           ------------------ JUST A LOT OF CODE WHICH I SHORT TO FEW LINES -------------
+//        val options1 = resources.getStringArray(R.array.Options_1)
+//        val spinner1 = findViewById<Spinner>(R.id.spinner1)
+//        spinner1.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options1)
+//        spinner1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, positionInArray: Int, p3: Long) {
+//                if (positionInArray != 0) {
+//                    Toast.makeText(
+//                        this@MainActivity,
+//                        "Selected Item: " + options1[positionInArray], Toast.LENGTH_SHORT
+//                    ).show()
+//                    editTextProductName.setText(options1[positionInArray])
+//                }
+//            }
+
+
+//   --------------Don't Work !!! I Don't Know What To Do.--------------
+//    var isFavoriteBoolFirst = false
 //        var favoriteButton = findViewById<Button>(R.id.favoriteB)
 //        favoriteButton.setOnClickListener {
 //            if (isFavoriteBoolFirst) {
@@ -125,9 +104,7 @@ class MainActivity : AppCompatActivity() {
 //
 //        }
 
-
 //        var imageView: ImageView? = findViewById(R.drawable.favoritestaroff)
-//
 //        if (imageView != null) {
 //            imageView.setOnClickListener {
 //                isFavorite(isFavoriteBoolFirst)
@@ -136,7 +113,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 //   --------------Don't Work !!! I Don't Know What To Do.--------------
-
 //    private fun isFavorite(isFavoriteBool: Boolean) {
 //        if (!isFavoriteBool) {
 //            imageView.setBackgroundResource(R.drawable.favoritestaroff)
