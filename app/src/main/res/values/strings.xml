@@ -10,6 +10,10 @@
     <string name="my_list_title">My List</string>
     <string name="cant_find_write_here_for_yourself">Cannot find? write here for yourself</string>
     <string name="favoritestarb">FavoriteStarB</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="set">Set</string>
+    <string name="cencel">Cencel</string>
     <string-array name="Options_1">
         <item>Snacks</item>
         <item>kif-kef</item>
