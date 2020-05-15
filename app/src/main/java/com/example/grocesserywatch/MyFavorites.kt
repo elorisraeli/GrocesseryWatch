@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.classes.FavoritesAdapter
+import com.example.classes.Item
 
 class MyFavorites : AppCompatActivity() {
 
@@ -17,8 +19,20 @@ class MyFavorites : AppCompatActivity() {
         val itemArray = ArrayList<Item>()
         itemArray.add(Item("Milk", "05/05/2020", "14:30"))
         itemArray.add(Item("Milk", "05/05/2020", "14:30"))
-        itemArray.add(Item("Watermelon", "05/05/2020", "14:30"))
-        itemArray.add(Item("eggs bucks", "05/05/2020", "14:30"))
+        itemArray.add(
+            Item(
+                "Watermelon",
+                "05/05/2020",
+                "14:30"
+            )
+        )
+        itemArray.add(
+            Item(
+                "eggs bucks",
+                "05/05/2020",
+                "14:30"
+            )
+        )
         itemArray.add(Item("Milk", "05/05/2020", "14:30"))
         itemArray.add(Item("Milk", "05/05/2020", "14:30"))
         itemArray.add(Item("Milk", "05/05/2020", "14:30"))

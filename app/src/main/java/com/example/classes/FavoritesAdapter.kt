@@ -1,4 +1,4 @@
-package com.example.grocesserywatch
+package com.example.classes
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,18 +6,19 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.grocesserywatch.R
 import kotlinx.android.synthetic.main.alert_view.view.*
 import java.util.*
 
 class FavoritesAdapter(val itemList: ArrayList<Item>) :
     RecyclerView.Adapter<FavoritesAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.item_list, parent, false)
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: FavoritesAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item: Item = itemList[position]
         holder.textProductsName.text = item.productName
         holder.textDate.text = item.date
