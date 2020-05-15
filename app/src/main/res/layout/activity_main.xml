@@ -59,39 +59,25 @@
                 android:verticalSpacing="15dp" />
 
     </LinearLayout>
+
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
             android:id="@+id/editText_ProductName"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="98dp"
-            android:layout_marginStart="98dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/editText_Date"
-            android:autofillHints="" tools:targetApi="o" android:hint="@string/product_s_name"/>
-    <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="date"
+            android:layout_marginStart="98dp"
+            android:layout_marginLeft="98dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints=""
             android:ems="10"
-            android:id="@+id/editText_Date" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/editText_Time"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="98dp"
-            android:layout_marginStart="98dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp" android:autofillHints="" tools:targetApi="o"
-            android:hint="@string/date_to_alert"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            android:id="@+id/editText_Time" android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/addButton"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="98dp" android:layout_marginStart="98dp" android:autofillHints=""
-            android:hint="@string/time_for_alert"/>
+            android:hint="@string/product_s_name"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/buttonChooseDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="o" />
+
     <Spinner
             android:layout_width="117dp"
             android:layout_height="23dp"
@@ -115,23 +101,52 @@
             android:id="@+id/spinner3" android:layout_marginEnd="16dp" android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/myListButton" android:layout_marginTop="8dp"/>
+
     <TextView
+            android:id="@+id/textView"
+            android:layout_width="233dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="95dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginEnd="94dp"
+            android:layout_marginRight="94dp"
             android:text="@string/cant_find_write_here_for_yourself"
-            android:layout_width="222dp"
-            android:layout_height="28dp"
-            android:id="@+id/textView" android:layout_marginEnd="94dp" android:layout_marginRight="94dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="95dp" android:layout_marginStart="95dp"
-            app:layout_constraintBottom_toTopOf="@+id/editText_ProductName"/>
+            app:layout_constraintBottom_toTopOf="@+id/editText_ProductName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/star_off"
-            android:id="@+id/imageView"
-            app:layout_constraintStart_toEndOf="@+id/editText_ProductName"
-            android:layout_marginLeft="4dp" android:layout_marginStart="4dp"
-            android:contentDescription="@string/favoritestarb"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/editText_ProductName"/>
+            android:contentDescription="@string/favoritestarb"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_ProductName"
+            app:layout_constraintEnd_toStartOf="@+id/editText_ProductName"
+            app:srcCompat="@android:drawable/star_off" />
+
+    <Button
+            android:id="@+id/buttonChooseTime"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="64dp"
+            android:text="@string/choose_time"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/addButton"
+            app:layout_constraintEnd_toEndOf="@+id/buttonChooseDate"
+            app:layout_constraintStart_toStartOf="@+id/buttonChooseDate" />
+
+    <Button
+            android:id="@+id/buttonChooseDate"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/choose_date"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonChooseTime"
+            app:layout_constraintEnd_toEndOf="@+id/editText_ProductName"
+            app:layout_constraintStart_toStartOf="@+id/editText_ProductName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

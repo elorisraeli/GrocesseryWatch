@@ -14,6 +14,8 @@
     <string name="time">Time</string>
     <string name="set">Set</string>
     <string name="cencel">Cencel</string>
+    <string name="choose_time">Choose Time</string>
+    <string name="choose_date">Choose Date</string>
     <string-array name="Options_1">
         <item>Snacks</item>
         <item>kif-kef</item>
